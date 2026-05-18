@@ -1,0 +1,27 @@
+img_width: 128
+img_height: 64
+transformer_outputs: 2
+
+rescaling:
+  scale: 0.00392156862745098
+  offset: 0.0
+
+tokenizer:
+  kernel_size: 3
+  embedding_dim: 48        # Diubah ke 48 agar pas dengan pretrained weights!
+  blocks:
+    - layer: Conv2D
+      kernel_size: 3
+      filters: 32
+      stride: 2
+    - layer: Conv2D
+      kernel_size: 3
+      filters: 48         # Diubah ke 48 agar klop dengan value.shape=(3,3,32,48)
+      stride: 1
+
+transformer_encoder:
+  layers: 4
+  heads: 4
+  projection_dim: 48      # Samakan menjadi 48 agar tidak terjadi shape mismatch
+  units: [48]             # Samakan menjadi 48
+  mlp_dim: 256
