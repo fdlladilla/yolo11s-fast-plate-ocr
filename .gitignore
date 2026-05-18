@@ -227,3 +227,7 @@ dataset_parkir/
 venv/
 .DS_Store
 __pycache__/
+
+dataset_parkir/
+hasil/
+*.jpg
